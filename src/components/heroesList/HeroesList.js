@@ -49,4 +49,4 @@ const HeroesList = () => {
     )
 }
 
-// export default HeroesList;
+export default HeroesList;

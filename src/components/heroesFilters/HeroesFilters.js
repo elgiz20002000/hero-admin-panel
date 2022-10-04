@@ -14,6 +14,7 @@ import { fetchFilters, selectAll} from './filtersSlice';
 import { changeFilterName } from  './filtersSlice'
 import Spinner from "../spinner/Spinner";
 
+
 const HeroesFilters = () => {
 
     const dispatch = useDispatch() ,
