@@ -25,6 +25,7 @@ const HeroesFilters = () => {
 
     useEffect(() => {
         dispatch(fetchFilters())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 
