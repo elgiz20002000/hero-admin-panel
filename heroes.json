@@ -1,32 +1,25 @@
 {
-  "heroes": [
-    {
-      "id": "bb4a3767-d22a-4d5f-aebc-dad9f4e39ac7",
-      "name": "Loki",
-      "text": "",
-      "element": "wind",
-      "description": "crush"
-    },
-    {
-      "id": "9ea6acca-e199-419a-9968-07b335840a8f",
-      "name": "xxa",
-      "text": "",
-      "element": "fire",
-      "description": "xaax"
-    },
-    {
-      "id": "a92c83ab-5ff6-46d6-9562-04ceadda509a",
-      "name": "Hulk",
-      "text": "",
-      "element": "earth",
-      "description": "crush"
-    }
-  ],
+  "heroes": [],
   "filters": [
-    {"id":1 , "name":"all"},
-    {"id":2 , "name":"fire"},
-    {"id":3 , "name": "water"},
-    {"id":4 , "name":"wind"},
-    {"id":5 , "name":"earth"}
+    {
+      "id": 1,
+      "name": "all"
+    },
+    {
+      "id": 2,
+      "name": "fire"
+    },
+    {
+      "id": 3,
+      "name": "water"
+    },
+    {
+      "id": 4,
+      "name": "wind"
+    },
+    {
+      "id": 5,
+      "name": "earth"
+    }
   ]
 }

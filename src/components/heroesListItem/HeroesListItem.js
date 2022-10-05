@@ -2,12 +2,13 @@ import { useDispatch } from "react-redux";
 import { useHttp } from "../../hooks/http.hook";
 import {heroDeleted} from '../heroesList/heroesSlice';
 
-const HeroesListItem = ({name, description, element , id}) => {
+
+const HeroesListItem = ({name, text, element , id}) => {
 
     const dispatch = useDispatch(); 
     const {request} = useHttp()
 
-    const deleteItem = (index) => {
+    const deleteItem =  (index) => {
         request("http://localhost:3001/heroes/" + index , 'DELETE')
         .then(console.log('hero deleted'))
         .then(dispatch(heroDeleted(index)))
@@ -32,6 +33,7 @@ const HeroesListItem = ({name, description, element , id}) => {
         default:
             elementClassName = 'bg-warning bg-gradient';
     }
+    console.log(id);
 
     return (
         <li 
@@ -43,7 +45,7 @@ const HeroesListItem = ({name, description, element , id}) => {
             <div className="card-body">
                 
                 <h3 className="card-title">{name}</h3>
-                <p className="card-text">{description}</p>
+                <p className="card-text">{text}</p>
             </div>
             <span className="position-absolute top-0 start-100 translate-middle badge border rounded-pill bg-light">
                 <button onClick={() => deleteItem(id)} type="button" className="btn-close btn-close" aria-label="Close"></button>

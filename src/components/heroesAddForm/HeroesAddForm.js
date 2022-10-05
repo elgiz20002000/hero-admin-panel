@@ -18,6 +18,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { selectAll } from "../heroesFilters/filtersSlice";
 import { useSelector } from "react-redux";
 
+
 const HeroesAddForm = () => {
 
     const dispatch = useDispatch() ,
@@ -32,9 +33,10 @@ const HeroesAddForm = () => {
             element: ''
         }}
         onSubmit={(values , {resetForm}) => {
-            request("http://localhost:3001/heroes/" , 'POST' , JSON.stringify({id:uuidv4() , ...values}))
+            let id = uuidv4()
+            request("http://localhost:3001/heroes/" , 'POST' , JSON.stringify({ id , ...values}))
             .then(console.log('hero created'))
-            .then(dispatch(heroCreated({id:uuidv4() , ...values})))
+            .then(dispatch(heroCreated({ id , ...values})))
             resetForm({values:{   name: '', text: '', element: ''}})
         }}>
             <Form  method="POST" className="border p-4 shadow-lg rounded">
@@ -53,7 +55,7 @@ const HeroesAddForm = () => {
                     <label htmlFor="text" className="form-label fs-4">Описание</label>
                     <Field as='textarea'
                         required
-                        name="description" 
+                        name="text" 
                         className="form-control" 
                         id="text" 
                         placeholder="Что я умею?"
